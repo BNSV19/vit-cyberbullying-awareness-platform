@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <title>Read Stories</title>
+    <style>
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+    </style>
+  </head>
+  <script>
+    async function getstories() {
+      var stories = await fetch("/stories");
+      var div = document.getElementById("stories");
+      json = await stories.json();
+      html = "";
+      for (story of json) {
+        html += `<div class="px-4 pt-5 my-5 text-center border-bottom">
+                <h1>${story.author}</h1> 
+                <p>
+                    ${story.story}
+                </p>
+                <h6>story date: ${story.date}</h6>   
+        </div>
+        <div class="b-example-divider"></div>`;
+      }
+      div.innerHTML = html;
+      console.log(json[0]);
+    }
+  </script>
+  <body onload="getstories()">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <a
+          href="../posters/index.html"
+          class="btn btn-primary"
+          style="margin: auto 100px"
+          >posters</a
+        ><a
+          href="../index.html"
+          class="btn btn-primary"
+          style="margin: auto 100px"
+          >Stories</a
+        ><a
+          href="../preventive-measures/index.html"
+          class="btn btn-primary"
+          style="margin: auto 100px"
+          >preventive measures</a
+        >
+        <a
+          href="../submit.html"
+          class="btn btn-primary"
+          style="margin: auto 100px"
+          >Add a story</a
+        >
+      </div>
+    </nav>
+    <div id="stories"></div>
+  </body>
+</html>

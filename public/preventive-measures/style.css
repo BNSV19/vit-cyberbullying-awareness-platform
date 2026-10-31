@@ -1,0 +1,51 @@
+body{
+    background-color: #ADD8E6;
+}
+.container{
+    color: white;
+}
+.heading{
+   
+    font-family: 'Oswald', Helvetica, sans-serif;
+    font-size: 45px;
+    transform: skewY(-1deg);
+    letter-spacing: 4px;
+    word-spacing: -8px;
+    color: crimson;
+    display: inline-block;
+    text-shadow: 
+        -1px -1px 0 #FF0000,
+        -2px -2px 0 #FF5001,
+        -3px -3px 0 #FF6002,
+        -4px -4px 0 #FF7003,
+        -30px 20px 40px dimgrey
+}
+
+.small-heading{
+
+    color:crimson;
+}
+.cover-img{
+    margin-left: 20%;
+}
+.media-body ul {
+
+    color: black;
+}
+
+.organization{
+
+    
+    background-color: black;
+    width: 100%;
+
+
+}
+
+.organization div{
+    margin-left: 10%;
+    padding: 10px;
+}
+.organization p{
+    color: white;
+}
